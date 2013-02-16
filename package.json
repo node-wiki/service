@@ -15,6 +15,10 @@
     "Justin Krueger <justin@kroogs.com> (http://kroogs.com)"
   ],
 
+  "scripts": {
+    "test": "vows"
+  },
+
   "engines": {
     "node": ">=0.8"
   },
