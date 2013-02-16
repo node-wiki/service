@@ -1,0 +1,35 @@
+{
+  "name": "node-wiki",
+  "description": "A wiki for NodeJS.",
+  "version": "0.0.3",
+
+  "homepage": "http://wiki.limpidtech.com/",
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/node-wiki/node-wiki.git"
+  },
+
+  "author": [
+    "Brandon R. Stoner <monokrome@monokro.me> (http://monokro.me/)",
+    "Justin Krueger <justin@kroogs.com> (http://kroogs.com)"
+  ],
+
+  "engines": {
+    "node": ">=0.8"
+  },
+
+  "dependencies": {
+    "step": "==0.0.5",
+    "underscore": "==1.4.4",
+    "winston": "==0.6.2"
+  },
+
+  "optionalDependencies": {
+    "node-markdown": "==0.1.1"
+  },
+
+  "devDependencies": {
+    "coffee-script": "==1.4.0"
+  }
+}
