@@ -17,10 +17,7 @@ vows.describe('Markup').addBatch
           require moduleName
         , Error
 
-.exportTo module
-
-vows.describe('Markdown').addBatch
-  'when rendering':
+  'markdown rendering':
     topic:  markdown.render '# Example'
     
     'returns a string': (topic) ->

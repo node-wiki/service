@@ -27,10 +27,7 @@ vows.describe('Data sources').addBatch
         topic.DataSource.factory 'file://test/testing.git', settings.context
       , Error
 
-.exportTo module
-
-vows.describe('Git').addBatch
-  'data source':
+  'git data source':
     topic: new git.DataSource
 
     'can create repository': (topic) ->
