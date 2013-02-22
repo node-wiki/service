@@ -1,6 +1,9 @@
 vows = require 'vows'
 assert = require 'assert'
 
+settings = require '../etc/node-wiki/testing.coffee'
+
+base = require '../src/data_sources/base'
 defaults = require '../src/data_sources/defaults'
 git = require '../src/data_sources/git'
 
@@ -15,6 +18,14 @@ vows.describe('Data sources').addBatch
         assert.doesNotThrow ->
           require moduleName
         , Error
+
+  'factory':
+    topic: base
+
+    'returns a data source using git': (topic) ->
+      assert.doesNotThrow ->
+        topic.DataSource.factory 'file://test/testing.git', settings.context
+      , Error
 
 .exportTo module
 
