@@ -1,3 +1,4 @@
+step = require 'step'
 git = require('nodegit').raw
 
 base = require './base'
@@ -18,12 +19,18 @@ class GitDataSource extends base.DataSource
 
   openRepository: (name, callback) ->
     repo = new git.Repo
-    repo.open @getRepositoryName(), callback
+    repo.open name, callback
 
   # TODO: Get filename from git URL.
   getRepositoryFileName: -> @context.sourcePath
 
   retrieve: (identifier, meta) ->
+    self = @
+
+    step ->
+      self.openRepository self.getRepositoryFileName(), @
+    , (repo) ->
+      console.log repo
 
   update: (identifier, meta) ->
 
