@@ -34,7 +34,7 @@ vows.describe('Git').addBatch
     topic: new git.DataSource
 
     'can create repository': (topic) ->
-      topic.createRepository 'test.git', (error) ->
+      topic.createRepository settings.gitTestRepo, (error) ->
         assert.equal error, 0
 
 .exportTo module

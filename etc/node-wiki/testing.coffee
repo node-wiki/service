@@ -5,6 +5,8 @@ sourceTypes = require '../../src/data_sources/defaults'
 @context =
   sourceTypes: {}
 
+@gitTestRepo = 'test.git'
+
 # Remap default data sources to source directory
 for key of sourceTypes.types
   value = sourceTypes.types[key]
