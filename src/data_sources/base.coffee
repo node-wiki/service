@@ -1,4 +1,6 @@
-@DataSource = class DataSource
+url = require 'url'
+
+class DataSource
   constructor: (@context) ->
 
   retrieve: (identifier, meta) ->
@@ -7,3 +9,4 @@
 
   delete: (identifier, meta) ->
 
+@DataSource = DataSource
