@@ -1,4 +1,5 @@
 git = require('nodegit').raw
+
 base = require './base'
 
 class GitDataSource extends base.DataSource
@@ -13,8 +14,14 @@ class GitDataSource extends base.DataSource
 
   createRepository: (name, callback) ->
     repo = new git.Repo
-
     repo.init name, true, callback
+
+  openRepository: (name, callback) ->
+    repo = new git.Repo
+    repo.open @getRepositoryName(), callback
+
+  # TODO: Get filename from git URL.
+  getRepositoryFileName: -> @context.sourcePath
 
   retrieve: (identifier, meta) ->
 
