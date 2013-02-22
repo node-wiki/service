@@ -11,6 +11,11 @@ class GitDataSource extends base.DataSource
 
   ###
 
+  createRepository: (name, callback) ->
+    repo = new git.Repo
+
+    repo.init name, true, callback
+
   retrieve: (identifier, meta) ->
 
   update: (identifier, meta) ->
