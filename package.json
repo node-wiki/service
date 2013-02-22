@@ -30,7 +30,8 @@
   },
 
   "optionalDependencies": {
-    "node-markdown": "==0.1.1"
+    "node-markdown": "==0.1.1",
+    "gitteh": "==0.1.0"
   },
 
   "devDependencies": {
