@@ -27,4 +27,3 @@ vows.describe('Markup').addBatch
       assert.equal topic, '<h1>Example</h1>'
 
 .exportTo module
-
