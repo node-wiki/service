@@ -19,7 +19,7 @@ class MongoDataSource extends base.DataSource
   retrieve: (identifier, meta, resultCallback) ->
     @client.collection 'documents', (err, collection) ->
       collection.findOne
-        identifier: identifier
+        _id: identifier
       , resultCallback
 
   update: (identifier, content, meta, resultCallback) ->
