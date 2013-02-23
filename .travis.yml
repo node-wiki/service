@@ -13,4 +13,5 @@ notifications:
       - "irc.freenode.net#node-wiki"
     on_success: always
     on_failure: always
-
+services:
+  - mongodb
