@@ -34,7 +34,7 @@ class MongoDataSource extends base.DataSource
   delete: (identifier, meta, resultCallback) ->
     @client.collection 'documents', (err, collection) ->
       collection.findAndModify
-        '_id': identifier
+        _id: identifier
       , []
       , {}
       , remove: true
