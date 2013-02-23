@@ -24,7 +24,7 @@
   },
 
   "dependencies": {
-    "step": "==0.0.5",
+    "async": "==0.2.5",
     "underscore": "==1.4.4",
     "winston": "==0.6.2"
   },
