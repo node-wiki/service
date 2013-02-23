@@ -6,6 +6,6 @@ node_js:
 notifications:
   irc:
     - "irc.freenode.net#node-wiki"
-  on_success: change
-  on_failure: change
+  on_success: always
+  on_failure: always
 
