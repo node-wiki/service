@@ -7,11 +7,11 @@ defaultContext =
 class DataSource
   constructor: (@context) ->
 
-  retrieve: (identifier, meta) ->
+  retrieve: (identifier, meta, resultCallback) ->
 
-  update: (identifier, meta) ->
+  update: (identifier, meta, resultCallback) ->
 
-  delete: (identifier, meta) ->
+  delete: (identifier, meta, resultCallback) ->
 
   @factory: (dataURL, context) ->
     context = _.extend {}, defaultContext, context or {}
