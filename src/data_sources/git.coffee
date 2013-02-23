@@ -49,6 +49,6 @@ class GitDataSource extends base.DataSource
 
   update: (identifier, meta) ->
 
-  delete: (identifier, meta) ->
+  remove: (identifier, meta) ->
 
 @DataSource = GitDataSource

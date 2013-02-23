@@ -31,7 +31,7 @@ class MongoDataSource extends base.DataSource
     @client.collection 'documents', (err, collection) ->
       collection.save document, safe: true, resultCallback
 
-  delete: (identifier, meta, resultCallback) ->
+  remove: (identifier, meta, resultCallback) ->
     @client.collection 'documents', (err, collection) ->
       collection.findAndModify
         _id: identifier

@@ -11,7 +11,7 @@ class DataSource
 
   update: (identifier, meta, resultCallback) ->
 
-  delete: (identifier, meta, resultCallback) ->
+  remove: (identifier, meta, resultCallback) ->
 
   @factory: (dataURL, context) ->
     context = _.extend {}, defaultContext, context or {}
