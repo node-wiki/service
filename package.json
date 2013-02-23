@@ -30,7 +30,7 @@
   },
 
   "optionalDependencies": {
-    "mongoose": "==3.5.7",
+    "mongodb": "==1.2.13",
     "node-markdown": "==0.1.1",
     "nodegit": "==0.0.6"
   },
