@@ -37,7 +37,6 @@
 
   "devDependencies": {
     "coffee-script": "==1.4.0",
-    "vows": "==0.7.0",
-    "rimraf": "==2.1.4"
+    "vows": "==0.7.0"
   }
 }
