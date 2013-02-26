@@ -3,6 +3,7 @@ _ = require 'underscore'
 sourceTypes = require '../../src/data_sources/defaults'
 
 @context =
+  sourcePath: 'mongodb://localhost:27017/test'
   sourceTypes: {}
 
 @gitTestRepo = 'test.git'
