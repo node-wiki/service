@@ -14,7 +14,7 @@ class MongoDataSource extends base.DataSource
         callback err
       else
         @client = p_client
-        callback err, p_client
+        callback err, @
 
   retrieve: (identifier, meta, resultCallback) ->
     @client.collection 'documents', (err, collection) ->
