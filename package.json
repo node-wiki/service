@@ -16,7 +16,7 @@
   ],
 
   "scripts": {
-    "test": "vows"
+    "test": "vows --spec --cover-html"
   },
 
   "engines": {
