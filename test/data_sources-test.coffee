@@ -5,7 +5,17 @@ settings = require '../etc/node-wiki/testing.coffee'
 
 base = require '../src/data_sources/base'
 defaults = require '../src/data_sources/defaults'
-git = require '../src/data_sources/git'
+mongo = require '../src/data_sources/mongo'
+
+genericTests =
+  update: (source, callback) ->
+    source.update 'test.md', '# Example content', {}, callback
+
+  retrieve: (source, callback) ->
+    source.retrieve 'test.md', {}, callback
+
+  remove: (source, callback) ->
+    source.remove 'test.md', {}, callback
 
 vows.describe('Data sources').addBatch
   'default modules':
@@ -22,16 +32,28 @@ vows.describe('Data sources').addBatch
   'factory':
     topic: base
 
-    'returns a data source using git': (topic) ->
+    'returns a data source using mongo': (topic) ->
       assert.doesNotThrow ->
-        topic.DataSource.factory 'file://test/testing.git', settings.context
+        topic.DataSource.factory 'mongodb://localhost/test', settings.context
       , Error
 
-  'git data source':
-    topic: new git.DataSource
+  'mongo data source':
+    topic: ->
+      source = new mongo.DataSource settings.context
+      source.initialize @callback
 
-    'can create repository': (topic) ->
-      topic.createRepository settings.gitTestRepo, (error) ->
-        assert.equal error, 0
+    'can update document': (err, topic) ->
+      genericTests.update topic, (err, document) ->
+        assert.equal err, 0
+
+    'can retrieve document': (err, topic) ->
+      genericTests.update topic, (err, document) ->
+        genericTests.retrieve topic, (err, document) ->
+          assert.equal err, 0
+
+    'can remove document': (err, topic) ->
+      genericTests.update topic, (err, callback) ->
+        genericTests.remove topic, (err, document) ->
+          assert.equal err, 0
 
 .exportTo module
