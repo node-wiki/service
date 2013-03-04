@@ -1,6 +1,7 @@
 The MIT License (MIT)
 
 Copyright (c) 2013, Brandon R. Stoner <monokrome@monokro.me>
+
 Copyright (c) 2013, Justin Krueger <justin@kroogs.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
